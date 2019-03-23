@@ -1,0 +1,35 @@
+
+body {
+	margin:10px;
+}
+
+h2 {
+	border-bottom:1px solid darkgray;
+	padding-bottom:10px;
+}
+
+#burgers {
+	float:left;
+	width:40%;
+}
+
+#devoured {
+	float:right;
+	width:40%;
+}
+
+
+.burgers button {
+	margin-right:20px;
+}
+
+.burger {
+	border:1px solid black;
+	margin:10px;
+	padding: 10px 20px;
+	background-color:lightyellow;
+}
+
+.burger.devoured {
+	background-color:pink;
+}

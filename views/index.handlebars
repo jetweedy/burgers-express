@@ -1,0 +1,43 @@
+<h2>Burgers!</h2>
+
+<script>
+function devourBurger(b) {
+	$("#burger_"+b).addClass("devoured");
+	$("#button_"+b).remove();
+	$("#devoured").append($("#burger_"+b));
+	$.post( "/burger/eat/"+b, function( data ) {
+	  $( ".result" ).html( data );
+	});
+}
+</script>
+
+<form id="formAddBurger" method="post" action="/burger/add">
+	<h3>Add a Burger!</h3>
+	<input type="text" name="burger_name" />
+	<input type="submit" value="Add Burger!" />
+</form>
+
+<hr />
+
+<div id="burgers" class="burgers">
+	<h3>Uneaten</h3>
+	{{#each burgers}}
+		{{#unless devoured}}
+			<div id='burger_{{id}}' class='burger'>
+				<button id='button_{{id}}' onclick='devourBurger({{id}});'>Eat Me!</button>
+				<label id='label_{{id}}'>{{burger_name}}</label>
+			</div>
+		{{/unless}}
+	{{/each}}
+</div>
+
+<div id="devoured" class="burgers">
+	<h3>Devoured</h3>
+	{{#each burgers}}
+		{{#if devoured}}
+			<div id='burger_{{id}}' class='burger devoured'>
+			<label>{{burger_name}}</label>
+			</div>
+		{{/if}}
+	{{/each}}
+</div>
