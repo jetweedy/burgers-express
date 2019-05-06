@@ -5,10 +5,10 @@ var connection = mysql.createConnection({
 //	user: "mydb",
 //	password: "mydb",
 //	database: "bamazon"
-  host: "localhost",
+  host: (process.env.DB_HOST || "localhost"),
   port: 3306,
-  user: (process.env.DB_USERNAME || "root"),
-  password: (process.env.DB_PASSWORD || "UNC1964"),
+  user: (process.env.DB_USERNAME || "username"),
+  password: (process.env.DB_PASSWORD || "password"),
   database: "burgers_db"
 });
 connection.connect(err => {
