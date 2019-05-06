@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
   port: 3306,
   user: (process.env.DB_USERNAME || "username"),
   password: (process.env.DB_PASSWORD || "password"),
-  database: "burgers_db"
+  database: (process.env.DB_DATABASE || "burgers_db")
 });
 connection.connect(err => {
   if (err) {
