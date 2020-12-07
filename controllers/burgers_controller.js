@@ -1,3 +1,9 @@
+/*
+This file exports a function that applies some routing to the app that's passed in. 
+(That's why no return value is required in server.js when we call this up and apply it in a single line.)
+These routes basically act as our front line of processing on the back end, directing get and post requests
+	to the appropriate business logic in the 'burger' model that we're requiring below.
+*/
 const path = require("path");
 burger = require("../models/burger");
 
