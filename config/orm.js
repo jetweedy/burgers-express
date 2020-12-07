@@ -12,6 +12,9 @@ This file requires the connection.js file in order to create the connection to t
 
 */
 
+const connection = require("./connection.js");
+
+
 function printQuestionMarks(num) {
   const arr = [];
   for (let i = 0; i < num; i++) {
