@@ -1,3 +1,9 @@
+/*
+This file handles making our connection to the database, as used by the ORM file.
+It uses the dotenv library to read some variables in from the .env file.
+That .env file is ignored by the repository in order to preserve credential privacy.
+*/
+
 require("dotenv").config();
 var mysql = require("mysql");
 var connection = mysql.createConnection(process.env.DB_URL);
